@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <style>
+        body{background-color: skyblue; font-family: cursive; color: black; padding: 30px;}
+        h1{font-size: 35px; color:whitesmoke; text-transform: uppercase; letter-spacing: 2px; text-align: center}
+        p{font-size: 18px; text-align: center}
+        img{border-radius: 25px} ul{list-style-type: none; border: solid black 1px}
+    </style>
+
+</head>
+<body>
+    <h1>COMMENT SYSTEM</h1>
+    <form action="/comment" method="POST">
+        <input type="text" class="text" name="user" placeholder="User">
+        <hr/>
+        <textarea name="comment" placeholder="Comment" ></textarea>
+        <hr/>
+        <button type="submit">Post Comment</button>
+    </form>
+
+    <% for(i=0; i<comment.length; i++){%>
+       <ul> 
+       <li> <b> <%= comment[i].user %> </b> </li>
+       <li> <%= comment[i].comment %>  </li>
+       <li> <%= comment[i].createdDate %>  </li>
+       </ul>
+     <% } %>
+</body>
+</html>
